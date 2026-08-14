@@ -1,0 +1,8 @@
+## Computer Aided Engineering: Windmill Design
+*Created and validated a windmill tower base design by combining Excel calculations with ANSYS simulations to minimize material while meeting deflection limits and factors of safety.*
+
+Given a list of performance specifications under different weather loadings, I designed a windmill tower while minimizing material volume. I selected the inner and outer diameters as key parameters due to the requirement for the Nacelle to be mounted at 525 feet elevation. Theoretical analysis revealed that tower deflection and bending were the primary limiting factors; therefore, I minimized the thickness to 0.75".
+
+To ensure stability of my design, I utilized ANSYS Workbench to conduct a static structural, modal, eigenvalue buckling, and thermal analysis. The primary simulations used a base without bolt holes to reduce meshing time, and, since the tower was modeled as a shell with 5 divisions with the base as a solid, the interaction between types of element could skew results; therefore, using the opposite of the resulting reaction force from the tower on the inner edge of the flange, I created a detailed submodel of the ground connection from the flange to the bolted plate embedded in concrete to ensure stability. 
+
+My initial simulation exceeded the deflection limit of 1.4" during hurricane force winds by 0.6 feet. To solve this issue, I used the parameterization tool in Workbench to increase the thickness to 2.1" to fall within all given constraints. All results were verified with hand calculations which closely aligned with the simulations.

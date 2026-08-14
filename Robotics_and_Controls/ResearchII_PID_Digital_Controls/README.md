@@ -1,0 +1,6 @@
+## Research II:   PID Digital Controls
+*Diagnosed and implemented alternative controller architecture to fix the phase lag between motors in the Bio-Inspired Robotics Design (BIRD) Lab's flapping wing micro-air vehicle.*
+
+I mapped the original 12-point incremental encoders' serial reads to the flapping output through linkage geometry in Python and compared to video data (extracted using MATLAB Hough transforms) as an absolute reference frame. The results emphasized the impact of the low-resolution data and showed this was the primary issue introducing the phase lag. Since the original control was a leader-follower system between the wings, with a PID done on relative velocity, regardless of tuning they remained out of sync.
+
+Therefore, I restructured the control architecture and designed another circuit using absolute encoders with much finer resolution (14-bit). Using a Teensy 4.0 motor controller, I implemented an alternative C++ script; although theoretical modeling in MATLAB control designer predicted stable convergence with only proportional gain on position control, experiments resulted in sustained oscillations due to unmodeled second order effects. Therefore, I added a velocity loop with a low-pass filtering and feedforward to create a cascaded control that reduced steady state error of both motors within ±1°  degree of the setpoint.
