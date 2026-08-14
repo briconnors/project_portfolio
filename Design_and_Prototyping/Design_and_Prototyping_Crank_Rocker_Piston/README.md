@@ -12,8 +12,11 @@ After studying GD&T, my partner and I took apart the model and measured the nece
 In the machine shop, we used the lathe, milling machine, bandsaw, and manual press to fabricate an entirely new part directly from our drawings. This process helped us better understand how formal engineering drafts and tolerance decisions support real design and manufacturing constraints.
 
 ## Mechanism
-![Crank-rocker mechanism](docs/crank_rocker.gif)
-
+<p align="center">
+  <img src="docs/crank_rocker.gif" width="700">
+  <br>
+  <em>Figure 1: CAD animation demonstrating crank-rocker mechanism motion.</em>
+</p>
 
 ## Engineering Drawings
 - [Rocker Arm Drawing](docs/Rocker%20Arm%20Drawing.pdf)
