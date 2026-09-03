@@ -3,7 +3,11 @@
 
 *Experimentally characterized the pump and system head of a level control rig, identified model parameters from the data, and used a theoretical model to evaluate operating points of the system.*
 
-<div align="center"><a href="docs/Final_Report.pdf">Full Technical Report</a></div>
+<div align="center">
+  <a href="docs/Final_Report.pdf">Full Technical Report</a>
+  &nbsp; | &nbsp;
+  <a href="docs/M3_level_control.m">MATLAB Source Code</a>
+</div>
 
 ___
 
