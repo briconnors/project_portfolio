@@ -15,20 +15,22 @@ ___
 
 ## System Overview
 
-I worked with a partner to investigate whether beetle elytra-inspired protective shells could improve the structural robustness of flapping-wing micro air vehicles (FWMAVs) to build on prior robotic elytra research by Vourtsis et al.
+I worked with a partner to investigate whether beetle elytra-inspired protective shells could improve the structural robustness of flapping-wing micro air vehicles (FWMAVs) to build on prior robotic elytra research by Vourtsis et al. 
 
 FWMAV commonly leave motors, linkages, and electronics exposed, making their lightweight structures particularly vulnerable to damage. Our project combined static compression testing with dynamic drop experiments to characterize both structural failure and shock transmission through 3D-printed PLA and TPU shell configurations.
 
+I developed and performed the dynamic portion of drop testing, and designed/fabricated the sled and shells. My partner investigated locking joints and performed Instron testing. 
+
 <p align="center">
   <img src="docs/drop_rig.gif" width="200" alt="Elytra drop testing rig"><br>
-  <em>Figure 1: Instrumented drop rig used for dynamic impact testing of the elytra-inspired shell designs.</em>
+  <em>Figure 1: Final instrumented drop rig used for dynamic impact testing of the elytra-inspired shell designs.</em>
 </p>
 
 ___
 
 ## My Contributions
 
-My work focused on developing the dynamic impact-testing system and characterizing the resulting vibration and shock response experienced by the circuitry. I designed the guided drop rig, shell, and electronics sled, developed the embedded data-acquisition system used during dynamic testing, and analyzed the resulting acceleration data.
+My work focused on developing the dynamic impact-testing system and characterizing the resulting vibration and shock response experienced by the circuitry. I designed the guided drop rig, shell, and electronics sled, developed the embedded data-acquisition system used during dynamic testing, and analyzed the resulting acceleration data. 
 
 ### Mechanical Design
 The sled was designed as a compact, modular assembly to withstand repeated impacts without brittle fracture. The 3D-printed impact plate, air-gap separator, accelerometer plate, battery holder, and electronics compartment were fastened using eight screws per side, prioritizing robustness and rigid mounting.
