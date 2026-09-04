@@ -16,7 +16,7 @@ My work focused on developing the remote supervisory controller layer, while oth
 
 ## My Contributions
 
-I developed the controller, to monitor the network of batteries, evaluate health, report faults, and synchronize scheduling across batteries to the grid demand across the fleet. My group members developed the local BLE Python actuator to decrypt the messages sent from each battery to the app according to Bluetti source code.
+I developed the controller to monitor the network of batteries, evaluate health, report faults, and synchronize scheduling across batteries to the grid demand across the fleet. My group members developed the local BLE Python actuator to decrypt the messages sent from each battery to the app according to Bluetti source code.
 
 During early development, I characterized the communication and switching response of a Sonoff S31 smart plug used as a prototype actuator. I recorded command and response timing across repeated rapid-switching tests, highlighting unsuccessful responses, to evaluate communication latency and reliability before integrating the MQTT control architecture. 
 
