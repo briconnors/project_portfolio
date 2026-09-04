@@ -1,5 +1,20 @@
 ## Internship: Battery Fleet Controller
+`Embedded Systems` `MQTT` `Fleet Controls` `C++` 
+
 *Worked with a mechanical/electrical team at Loisaida Ecolibrium to design a grid-offset battery system, acting as a Con-Ed non-wired solution to assist the declining NYC power grid.*
+
+<div align="center">
+  <a href="https://docs.google.com/document/d/1v4bWwjNDgyZtrkNRwcYOvaFO80NGoXLbTvaOOI4C70U/edit?usp=sharing">Research Documentation</a>
+  &nbsp; | &nbsp;
+  <a href="docs/Raspberry_Pi_Controller.cpp">Controller Source Code</a>
+</div>
+
+## Overview
+To reduce demand on the NYC electrical grid during peak periods, we developed the communication and control architecture for coordinating a fleet of Bluetti battery systems. Batteries charge during lower-demand periods and supply connected loads during grid demand peaks, reducing the load drawn from the utility without interrupting operation of the connected equipment.
+
+My work focused on developing the remote supervisory controller layer, while other team members developed the local Python/BLE actuator responsible for direct communication with each battery of the fleet.
+
+## My Contributions
 
 I developed the controller, to monitor the network of batteries, evaluate health, report faults, and synchronize scheduling across batteries to the grid demand across the fleet. My group members developed the local BLE Python actuator to decrypt the messages sent from each battery to the app according to Bluetti source code.
 
