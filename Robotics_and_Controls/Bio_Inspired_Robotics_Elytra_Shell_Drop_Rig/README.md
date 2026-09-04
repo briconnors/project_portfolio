@@ -1,14 +1,18 @@
 ## Bio-Inspired Robotics: Elytra Impact Testing System
-`Embedded Systems` `Experimental Design` `Vibration Analysis` `MATLAB` `Excel`
+`Embedded Systems` `Experimental Design` `Vibration Analysis` `MATLAB` `Excel` `Onshape`
 
 *Designed and instrumented a dynamic drop-testing system to analyze beetle elytra-inspired impact protection for flapping-wing micro air vehicles.*
 
 <div align="center">
-  <a href="docs/ME_459_Beetle_Elytra_Report.docx">Full Technical Report</a>
+  <a href="docs/ME_459_Beetle_Elytra_Report.docx">Technical Report</a>
   &nbsp; | &nbsp;
-  <a href="docs/ME459_Beetle_Elytra.pptx">Project Presentation</a>
+  <a href="docs/ME459_Beetle_Elytra.pptx">Presentation</a>
   &nbsp; | &nbsp;
   <a href="docs/elytra_esp32_code/">ESP32 Source Code</a>
+  &nbsp; | &nbsp;
+  <a href="docs/log_decrement.m">MATLAB Script</a>
+  &nbsp; | &nbsp;
+  <a href="">Onshape CAD</a>
 </div>
 
 ___
@@ -75,12 +79,59 @@ ___
 
 The measured acceleration data was used to characterize shock transmission and vibration of the elytra sled. Before testing, a simplified spring-mass-damper impact model was developed using the Lagrange Energy Method to relate drop height, impact velocity, shell stiffness, damping, and stopping distance. The model established an initial 10–20 in. test range while limiting predicted acceleration to the +/- 200 g measurement range of the ADXL375.
 
-Peak acceleration and impact duration were then compared across the bare sled and PLA and TPU shell configurations. To examine the frequency response of the shells the measured acceleration data was processed in MATLAB using Fast Fourier Transforms (FFT). For the solid-shell configurations, dominant frequency peaks occurred near 998 Hz for PLA and 920 Hz for TPU. The half-power bandwidth method estimated damping ratios of 0.0189 and 0.0245, indicating lightly damped responses with slightly greater damping in TPU.
-**ADD IN MATLAB AND REFERENCE PICTURE HERE**
+Peak acceleration and impact duration were then compared across the bare sled and PLA and TPU shell configurations. To examine the frequency response of the shells the measured acceleration data was processed in MATLAB using Fast Fourier Transforms (FFT). Damping was estimated from the bandwidth between the interpolated half-power frequencies surrounding the dominant peak.
+
+<div align="center">
+  <img src="docs/Trial48.jpg" width="70%">
+  <br>
+  <img src="docs/Trial52.jpg" width="70%">
+  <br>
+  <em>Figure 6: Post-impact z-axis acceleration and FFT analysis for Trials 48 and 52, showing the dominant vibration frequency and half-power bandwidth used to estimate damping.</em>
+</div>
+
+<br>
+
+For the solid-shell configurations, dominant frequency peaks occurred near 998 Hz for PLA and 920 Hz for TPU. The half-power bandwidth method estimated damping ratios of 0.0189 and 0.0245, indicating lightly damped responses with slightly greater damping in TPU.
+
+<div align="center">
+<table>
+  <tr>
+    <th>Trial</th>
+    <th>Axis</th>
+    <th>Sampling Rate (Hz)</th>
+    <th>Window (s)</th>
+    <th>Dominant Freq. (Hz)</th>
+    <th>f1 (Hz)</th>
+    <th>f2 (Hz)</th>
+    <th>Half-Power Zeta</th>
+  </tr>
+  <tr>
+    <td>048</td>
+    <td>az</td>
+    <td>3205.1</td>
+    <td>0.502-0.540</td>
+    <td>919.5</td>
+    <td>907.2</td>
+    <td>952.23</td>
+    <td>0.02449</td>
+  </tr>
+  <tr>
+    <td>052</td>
+    <td>az</td>
+    <td>3205.1</td>
+    <td>0.502-0.540</td>
+    <td>998.32</td>
+    <td>974.81</td>
+    <td>1012.6</td>
+    <td>0.01894</td>
+  </tr>
+</table>
+<em>Table 1: MATLAB vibration and damping analysis results for TPU (48) and PLA (52) shell trials.</em>
+</div>
 
 ___
 
-### Project Outcome
+### Project Outcomes
 
 The TPU butt-joint configuration produced the lowest measured peak acceleration, approximately 50% lower than the unprotected drop, demonstrating the benefit of a more compliant shell for reducing transmitted shock.
 
