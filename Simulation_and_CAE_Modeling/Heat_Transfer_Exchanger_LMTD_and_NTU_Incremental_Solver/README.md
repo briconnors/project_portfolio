@@ -5,6 +5,8 @@
 *Worked with a team to design and evaluate an air-to-air heat exchanger for HVAC recovery at 41 Cooper Square. I developed a parameterized MATLAB model using the LMTD and effectiveness-NTU methods to solve outlet conditions and characterize heat transfer across potential designs.*
 
 <p align="center">
+  <a href="docs/Heat Transfer Final Report.pdf">Final Report</a>
+    &nbsp; | &nbsp;
   <a href="docs/lmtd_ntu_incremental_solver.m">MATLAB Source Code</a>
 </p>
 
