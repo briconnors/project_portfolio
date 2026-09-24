@@ -15,8 +15,7 @@ ___
 
 ### System Overview
 
-The original CU-BIRD flapping wing micro air vehicle has two independent hobbyist plastic-geared motors to allow advanced maneuvers without exceeding strict mass constraints. However, the final model exhibited significant phase lag between wings making flight impossible. After reading the master's thesis, I became interested in investigating the 12-point quadrature encoders and relative velocity PID controller. 
-
+The CU-BIRD flapping wing micro air vehicle has two independent hobbyist plastic-geared motors to allow advanced maneuvers without exceeding strict mass constraints. However, the original model exhibited significant phase lag between wings making flight impossible. After reading the master's thesis, I became interested in investigating the 12-point quadrature encoders and relative velocity PID controller. 
 
 <div align="center">
   <img src="docs/MIT_IEEE_Poster.png" width="750">
@@ -30,7 +29,9 @@ ___
 
 To isolate the source of the observed phase lag, I developed a video-based tracker of the physical wing motion to compare against the quadrature encoder signal data. 
 
-The script extracted the linkage orientation from 240 fps test footage, and recorded with a ring light/blank poster to minimize shadows. Each frame was cropped and masked to limit irrelevant line interference from the wires and stand. Additional processing included converting to grayscale, and binarizing to isolate the mechanism. Canny edge detection reduced the processed image, preparing the data for a Hough transform to identify straight edged line segments corresponding to the linkage. Through repeated testing, parameters were adjusted to optimize the video data quality.
+The script extracted the linkage orientation from 240 fps test footage, and recorded with a ring light/blank poster to minimize shadows. A minimum squared distance filter was utilized to constrain the location and calibrate to the starting wing position manually from the first frame.
+
+Each frame was cropped and masked to limit irrelevant line interference from the wires and stand. Additional processing included converting to grayscale, and binarizing to isolate the mechanism. Canny edge detection reduced the processed image, preparing the data for a Hough transform to identify straight edged line segments corresponding to the linkage. Through repeated testing, parameters were adjusted to optimize the video data quality.
 
 <br>
 
@@ -43,7 +44,7 @@ The script extracted the linkage orientation from 240 fps test footage, and reco
 
 <br>
 
-To minimize false identification especially along the coupler linkage and shadow, geometric constraints were added to distinguish between the wing and surroundings. Canidate lines (green) were required to originate within a defined radius of a manually selected/calibrated region from the base to the tip at the beginning of the experiment. Short segments were rejected, and angle changes between frames greater than 50 degrees were discarded. The remaining canidate line closest to the stable pivot was selected as the tracked final Hough line (blue) and the angle was extracted with respect to horizontal.
+To minimize false identification especially along the coupler linkage and shadow, geometric constraints were added to distinguish between the wing and surroundings. Canidate lines (green) were required to originate within a defined radius of the manually selected/calibrated region from the base to the tip at the beginning of the experiment. Short segments were rejected, and angle changes between frames greater than 50 degrees were discarded. The remaining canidate line closest to the stable pivot was selected as the tracked final Hough line (blue) and the angle was extracted with respect to horizontal.
 
 Then, the incremental encoders' serial reads were mapped to the flapping output through linkage geometry in Python and compared to the video data as an absolute reference frame. 
 
@@ -71,11 +72,16 @@ ___
 
 ### Controller Redesign
 
-In the original leader–follower architecture, synchronization depended on relative velocity feedback between the two independently driven wings; consequently, insufficient sensing resolution limited the controller's ability to detect and correct phase error. PID retuning alone therefore could not reliably maintain synchronization. Therefore, I restructured the control architecture and designed another circuit using AS5047P absolute encoders with much finer resolution (14-bit). Using a Teensy 4.0 motor controller, I implemented an alternative C++ script.
+In the original leader–follower architecture, synchronization depended on relative velocity feedback between the two independently driven wings; as a result of the 12 counts per revoluation, insufficient sensing resolution limited the controller's ability to detect and correct phase error. PID retuning alone could not reliably maintain synchronization. Therefore, I restructured the control architecture and designed another circuit using AS5047P absolute encoders with much finer resolution (14-bit or 16,384 counts per revolution). Using a Teensy 4.0 motor controller, I implemented an alternative C++ script.
 
-(RESUME HERE!!!!!!)
+Since the absolute postion encoder allowed the use of a position PID rather than a velocity PID based on the relative difference between two points. Based on the second order approximation for DC motors and theoretical modeling in MATLAB control designeer, the position loop alone should have allowed the angular position to asymptotically approach the setpoint; however, in experimental testing the position experienced sustained oscillations likely due to unmodeled second order effects. 
+
+To better control the relationship between the voltage supplied and resulting motor position, I created a cascaded loop with an inner velocity loop based on the setpoint of the position PID. This more directly relates ramped or sinosoidal motion to the motor torque, allowing precise control of the position to both a stable and moving setpoint. 
+
 ___
 
 ### Outcomes
 
-Although theoretical modeling in MATLAB control designer predicted stable convergence with only proportional gain on position control, experiments resulted in sustained oscillations due to unmodeled second order effects. Therefore, I added a velocity loop with a low-pass filtering and feedforward to create a cascaded control that reduced steady state error of both motors within +/- 1  degree of the setpoint.
+After tuning both layers of the cascaded PID using the continuous cycling method, I developed a 5 Hz cyclic test in order to provide worst case tracking data. Error between the setpoint and actual position remained primarily between 0 and +/- 2 degrees, with a maximum error of 15 degrees near the rapid pivot. The goal was approximately +/- 10 degrees error due to the relatively high frequency, thus the design largely surpassed requirements. 
+
+Current work has focused on iterating the linkages mounting the magnets over the encoder board to finalize the transmission assembly. Future work may include adding a torque loop once additional friction and cyclic flapping are incorperated to the model, to more directly relate the motor torque to the reaction forces the bird will actually experience in flight beyond a static bench test. 
