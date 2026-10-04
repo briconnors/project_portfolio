@@ -58,7 +58,7 @@ Then, the incremental encoders' serial reads were mapped to the flapping output 
 
 <br>
 
-The results emphasized the impact of the low-resolution data introducing the phase lag. Since the original control was a leader-follower system between the wings, with a PID done on relative velocity, regardless of tuning they remained out of sync. Additionally calculations proved that the resolution was much too low to be sufficient for 5 Hz flapping frequency.
+The results emphasized the impact of the low-resolution data introducing the phase lag. Since the original control was a leader-follower system between the wings, with a PID done on relative velocity, regardless of tuning they remained out of sync. Additionally, the 12 tick per revolution, or 30 degree increments, was much too coarse for the required 5 Hz flapping frequency (only providing data every 16.7 ms).
 
 <br>
 
@@ -72,9 +72,9 @@ ___
 
 ### Controller Redesign
 
-In the original leader–follower architecture, synchronization depended on relative velocity feedback between the two independently driven wings; as a result of the 12 counts per revoluation, insufficient sensing resolution limited the controller's ability to detect and correct phase error. PID retuning alone could not reliably maintain synchronization. Therefore, I restructured the control architecture and designed another circuit using AS5047P absolute encoders with much finer resolution (14-bit or 16,384 counts per revolution). Using a Teensy 4.0 motor controller, I implemented an alternative C++ script.
+In the original leader–follower architecture, synchronization depended on relative velocity feedback between the two independently driven wings; as a result of the 12 counts per revoluation, insufficient sensing resolution limited the controller's ability to detect and correct phase error. Therefore, I restructured the control architecture and designed another circuit using AS5047P absolute encoders with much finer resolution (14-bit or 16,384 counts per revolution). Using a Teensy 4.0 motor controller, I implemented an alternative C++ script.
 
-Since the absolute postion encoder allowed the use of a position PID rather than a velocity PID based on the relative difference between two points. Based on the second order approximation for DC motors and theoretical modeling in MATLAB control designeer, the position loop alone should have allowed the angular position to asymptotically approach the setpoint; however, in experimental testing the position experienced sustained oscillations likely due to unmodeled second order effects. 
+Since the absolute postion encoder allowed the use of a position PID rather than a velocity PID based on the relative difference between two points. From the second order approximation for DC motors and theoretical modeling in MATLAB control designeer, the position loop alone should have allowed the angular position to asymptotically approach the setpoint; however, in experimental testing the position experienced sustained oscillations likely due to unmodeled second order effects. 
 
 To better control the relationship between the voltage supplied and resulting motor position, I created a cascaded loop with an inner velocity loop based on the setpoint of the position PID. This more directly relates ramped or sinosoidal motion to the motor torque, allowing precise control of the position to both a stable and moving setpoint. 
 
