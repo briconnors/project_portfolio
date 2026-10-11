@@ -1,4 +1,4 @@
-## Research II:   PID Digital Controls
+## Research II:   PID Digital Controls <kbd>2025</kbd> 
 `Embedded Systems` `Prototyping` `Data Analysis` `Digital Controls` `Experimentation` `C++` `MATLAB` `Python`
 
 *Diagnosed the phase lag in a flapping-wing micro air vehicle and redesigned its sensing and control architecture using high-resolution absolute encoders and cascaded position–velocity control.*
