@@ -5,7 +5,7 @@
 <div align="center">
   <a href="#technical-drawings">Technical Drawings</a>
   &nbsp; | &nbsp;
-  <a href="https://cad.onshape.com/documents/a2d47c71b2b26e8978a284f2/w/3d3e86211d60fecf684a808c/e/44dfef7007d19e4b0368b419">CAD Design</a> 
+  <a href="https://cad.onshape.com/documents/a2d47c71b2b26e8978a284f2/w/3d3e86211d60fecf684a808c/e/9995939220270f6a1df78ce2?renderMode=0&uiState=6acbbc55d8daabc165083e64">CAD Design</a> 
 </div>
 
 ### Overview
