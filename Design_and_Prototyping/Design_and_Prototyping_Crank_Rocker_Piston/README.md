@@ -2,6 +2,11 @@
 `GD&T` `Machining` `Onshape`
 
 *Applied geometric dimensioning and tolerancing (GD&T) to reverse-engineer, document, and manufacture a functional crank-rocker piston mechanism.*
+<div align="center">
+  <a href="#technical-drawings">Technical Drawings</a>
+  &nbsp; | &nbsp;
+  <a href="https://cad.onshape.com/documents/a2d47c71b2b26e8978a284f2/w/3d3e86211d60fecf684a808c/e/44dfef7007d19e4b0368b419">CAD Design</a> 
+</div>
 
 ### Overview
 After studying GD&T, my partner and I took apart the model and measured the necessary dimensions to fully describe each component using calipers. Based on these measurements, we produced formal technical drawings that adhered to standard drafting requirements and included dimensional tolerances for critical features, such as the pressure chamber and press-fitted joints.
@@ -27,7 +32,7 @@ In the machine shop, we used the lathe, milling machine, bandsaw, and manual pre
   <em>Figure 3: Final machined aluminum crank-rocker piston prototype. </em>
 </p>
 
-### Engineering Drawings
+### Technical Drawings
 - [Rocker Arm](docs/Rocker%20Arm%20Drawing.pdf)
 - [Wheel](docs/Wheel%20Drawing.pdf)
 - [Crank Shaft](docs/Crank%20Shaft%20Drawing.pdf)
