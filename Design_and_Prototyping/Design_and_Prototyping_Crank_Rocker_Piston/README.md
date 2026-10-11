@@ -6,14 +6,14 @@
 ### Overview
 After studying GD&T, my partner and I took apart the model and measured the necessary dimensions to fully describe each component using calipers. Based on these measurements, we produced formal technical drawings that adhered to standard drafting requirements and included dimensional tolerances for critical features, such as the pressure chamber and press-fitted joints.
 
-In the machine shop, we used the lathe, milling machine, bandsaw, and manual press to fabricate an entirely new part directly from our drawings with assistance from the lab technician. This process demonstrated the relationship between formal engineering drafts and design/manufacturing constraints.
-
-### Mechanism
 <p align="center">
   <img src="docs/crank_rocker.gif" width="500">
   <br>
   <em>Figure 1: CAD animation demonstrating crank-rocker mechanism motion.</em>
 </p>
+
+### Manufacturing
+In the machine shop, we used the lathe, milling machine, bandsaw, and manual press to fabricate an entirely new part directly from our drawings with assistance from the lab technician. This process demonstrated the relationship between formal engineering drafts and design/manufacturing constraints.
 
 <p align="center">
   <img src="docs/machining.jpg" width="400">
