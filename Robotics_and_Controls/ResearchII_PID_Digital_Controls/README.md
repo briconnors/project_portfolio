@@ -76,7 +76,7 @@ In the original leader–follower architecture, synchronization depended on rela
 
 Since the absolute postion encoder allowed the use of a position PID rather than a velocity PID based on the relative difference between two points. From the second order approximation for DC motors and theoretical modeling in MATLAB control designeer, the position loop alone should have allowed the angular position to asymptotically approach the setpoint; however, in experimental testing the position experienced sustained oscillations likely due to unmodeled second order effects. 
 
-To better control the relationship between the voltage supplied and resulting motor position, I created a cascaded loop with an inner velocity loop based on the setpoint of the position PID. This more directly relates ramped or sinosoidal motion to the motor torque, allowing precise control of the position to both a stable and moving setpoint. 
+To better control the relationship between the voltage supplied and resulting motor position, I created a cascaded loop with an inner velocity PID loop based on the setpoint of the outer position PID loop. This more directly relates ramped or sinosoidal motion to the motor torque, allowing precise control of the position to both a stable and moving setpoint. 
 
 ___
 
