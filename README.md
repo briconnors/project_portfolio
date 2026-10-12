@@ -26,7 +26,7 @@ ___
 ### Simulation & CAE
 > *Physics-based modeling, FEA, dynamics, and engineering simulation.*
 - [Heat Transfer Exchanger LMTD and NTU Incremental Solver](Simulation_and_CAE_Modeling/Heat_Transfer_Exchanger_LMTD_and_NTU_Incremental_Solver) <kbd>2026</kbd>
-- [Multi-Layer Heat Transfer Model](Modeling_and_Data_Analysis/Computer_Aided_Engineering_Multi_Layer_Heat_Transfer_Model/README.md) <kbd>2025</kbd>
+- [Multi-Layer Heat Transfer Model](Modeling_and_Data_Analysis/Computer_Aided_Engineering_Multi_Layer_Heat_Transfer_Model) <kbd>2025</kbd>
 - [Windmill Design & Analysis](Simulation_and_CAE_Modeling/Computer_Aided_Engineering_Windmill_Design) <kbd>2025</kbd>
 - [Manufacturing Bracket and Sheet Metal Study](Simulation_and_CAE_Modeling/Manufacturing_Angle_Bracket_Analysis) <kbd>2026</kbd>
 - [Airfoil Wing Stress & Elasticity Analysis](Simulation_and_CAE_Modeling/Stress_and_Elasticity_Airfoil_Wing_Design) <kbd>2025</kbd>
