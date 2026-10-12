@@ -1,4 +1,4 @@
-## Bio-Inspired Robotics: Elytra Impact Testing System
+## Bio-Inspired Robotics: Elytra Impact Testing System <kbd>2026</kbd>
 `Embedded Systems` `Experimental Design` `Vibration Analysis` `MATLAB` `Excel` `Onshape`
 
 *Designed and instrumented a dynamic drop-testing system to analyze beetle elytra-inspired impact protection for flapping-wing micro air vehicles.*
