@@ -14,7 +14,7 @@
 </div>
 
 ## Overview
-To reduce demand on the NYC electrical grid during peak periods, we developed the communication and control architecture for coordinating a fleet of Bluetti battery systems. Batteries were scheduled to charge during lower-demand periods and supply load during grid demand peaks, reducing the total energy drawn from the utility during the daily two peak events without interrupting operation of the connected appliances.
+To reduce demand on the NYC electrical grid during peak periods, my team developed the communication and control architecture for coordinating a fleet of Bluetti battery systems. Batteries were scheduled to charge during lower-demand periods and supply load during grid demand peaks, reducing the total energy drawn from the utility during the daily two peak events without interrupting operation of the connected appliances.
 
 <br>
 <p align="center">
