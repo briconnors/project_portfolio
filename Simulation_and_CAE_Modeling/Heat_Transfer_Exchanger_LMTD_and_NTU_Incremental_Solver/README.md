@@ -1,13 +1,15 @@
-## Heat Transfer: Parameterized LMTD-NTU Heat Exchanger Model
+## Heat Transfer: Parameterized LMTD-NTU Heat Exchanger Model <kbd>2025</kbd>
 
-`Heat Transfer` `System Modeling` `Design Optimization` `MATLAB`
+`Numerical Analysis` `System Modeling` `Design Optimization` `MATLAB`
 
 *Worked with a team to design and evaluate an air-to-air heat exchanger for HVAC recovery at 41 Cooper Square. I developed a parameterized MATLAB model using the LMTD and effectiveness-NTU methods to solve outlet conditions and characterize heat transfer across potential designs.*
 
 <p align="center">
   <a href="docs/Heat Transfer Final Report.pdf">Final Report</a>
-    &nbsp; | &nbsp;
+  &nbsp; | &nbsp;
   <a href="docs/lmtd_ntu_incremental_solver.m">MATLAB Source Code</a>
+  &nbsp; | &nbsp;
+  <a href="docs/Hand_Calculations">Hand-Calculations</a>
 </p>
 
 ---
@@ -105,4 +107,4 @@ Figure 5: Fan power relative to recovered heat for double-pipe and plate heat ex
 
 ## Project Outcome
 
-The final MATLAB model expanded our initial single-design calculations into a parameterized heat exchanger model that could evaluate potential geometries influence on the overall transfer.
+The final MATLAB model expanded our initial single-design calculations into a parameterized heat exchanger model that could evaluate potential geometries influence on the overall transfer. The model predicted a maximum outlet temperature of the cold side as 23 C with a diameter of 135 mm. Counterflow was roughly twice as effective as parallel flow across lengths from 100-300 meters, while wall thickness had minimal impact on overall effectiveness. The fan power estimates indicated that the initial configuration was impractical for the required airflow. Distributing the airflow across multiple parallel exchangers lowered fan-power requirements, suggesting a more practical configuration under the modeled requirements than the design optimized for total heat transfer.
