@@ -1,6 +1,6 @@
 ## Heat Transfer: Parameterized LMTD-NTU Heat Exchanger Model <kbd>2025</kbd>
 
-`Heat Transfer` `System Modeling` `Design Optimization` `MATLAB`
+`Numerical Analysis` `System Modeling` `Design Optimization` `MATLAB`
 
 *Worked with a team to design and evaluate an air-to-air heat exchanger for HVAC recovery at 41 Cooper Square. I developed a parameterized MATLAB model using the LMTD and effectiveness-NTU methods to solve outlet conditions and characterize heat transfer across potential designs.*
 
