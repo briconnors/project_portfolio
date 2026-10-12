@@ -1,4 +1,4 @@
-## Engineering Experimentation: Fluid Level Control System
+## Engineering Experimentation: Fluid Level Control System <kbd>2026</kbd>
 `Fluid Mechanics` `Experimentation` `System Modeling` `MATLAB`
 
 *Experimentally characterized the pump and system head of a level control rig, identified model parameters from the data, and used a theoretical model to evaluate operating points of the system.*
@@ -31,16 +31,64 @@ My work focused on processing the experimental data and theoretically modeling t
   <em>Figure 2: Dimensioned fluid-system diagram with points utilized for major and minor losses (stars/letters) and Bernoulli's (circles).</em>
 </p>
 
-When the geometry based model underpredicted the measured system resistance, I back-calculated an effective unmodeled loss coefficient relating the theoretical to experimental behavior. The resulting theoretical pump and system curves demonstrate that compensating with the ball-servo restriction shifts operation into the valve’s highly nonlinear low flow region, away from the natural operating point the procon rig was designed for.
+### Linearization of Pump and System Curves
+I processed the experimental pump and system measurements by averaging data across sampling intervals and identifying outliers outside two standard deviations (2sigma). Incremental data points were retained to emphasize the spread in flow rate demonstrated during the tank filling process, across the operating range.
+
+To determine the coefficients of the characteristic head equations, I linearized the experimental relationships with respect to squared flow rate. This transformed the quadratic head relationships into linear forms, allowing the pump and system coefficients to be identified from the experimental measurements.
+
+<p align="center">
+  <img src="docs/Linearized_Pump_Curve.jpg" width="600" alt="Linearized experimental pump head curve"><br>
+  <em>Figure 3: Linearized pump head measurements plotted against squared flow rate, showing the fitted relationship between pump head and flow.</em>
+</p>
+
+<p align="center">
+  <img src="docs/System_Curve.jpg" width="600" alt="Linearized experimental system head curve"><br>
+  <em>Figure 4: Linearized system head measurements plotted against squared flow rate, showing the fitted quadratic system resistance relationship.</em>
+</p>
+
+### Experimental Curve Fitting
+
+The resulting pump and system head relationships were modeled as quadratic functions of flow rate, consistent with the expected hydraulic behavior.
+
+<p align="center">
+  <img src="docs/Data_Cleaning.jpg" width="600" alt="Experimental pump and system head curves with outlier identification"><br>
+  <em>Figure 5: Experimental pump and system head measurements, averaged observations, excluded outliers, and fitted quadratic head curves.</em>
+</p>
+
+### Back-Calculation of Effective Unmodeled Losses
+
+The geometry-based hydraulic model underpredicted the measured system head, indicating additional resistance not fully represented by the calculated major and minor losses. To quantify this discrepancy, I back-calculated an effective unmodeled loss coefficient using the difference between experimental and geometry-predicted head, and evaluated this coefficient across the experimental flow range for both servo-restricted and voltage-restricted operating conditions.
+
+<p align="center">
+  <img src="docs/Unmodeled_Pump.jpg" width="600" alt="Effective unmodeled loss coefficient for servo-restricted data"><br>
+  <em>Figure 6: Back-calculated effective unmodeled loss coefficient under servo-restricted operation, showing its strong dependence on flow rate.</em>
+</p>
+
+<p align="center">
+  <img src="docs/Unmodeled_System.jpg" width="600" alt="Effective unmodeled loss coefficient for voltage-restricted data"><br>
+  <em>Figure 7: Back-calculated effective unmodeled loss coefficient under voltage-restricted operation, compared with the open-servo baseline.</em>
+</p>
+
+### Model Refinement and System Curve Comparison
+
+I used the effective loss adjustments to refine the geometry-based system model and compare its predictions against the experimentally identified system head curve. This provided a means of evaluating the influence of unmodeled resistance and determining whether the theoretical model could reproduce the observed hydraulic behavior.
+
+<p align="center">
+  <img src="docs/Effective_Loss_Coefficient.jpg" width="600" alt="Comparison of experimental and adjusted theoretical system curves"><br>
+  <em>Figure 8: Experimental system head curve compared with unadjusted geometry-based predictions and effective-loss-adjusted system curves at 12V and 6.8V.</em>
+</p>
+
+
+When the geometry based model underpredicted the measured system resistance, the back-calculated effective unmodeled loss coefficient related the theoretical to experimental behavior. The resulting theoretical pump and system curves demonstrate that compensating with the ball-servo restriction shifts operation into the valve’s highly nonlinear low flow region, away from the natural operating point the procon rig was designed for.
 
 <p align="center">
   <img src="docs/theoretical.png" width="600" alt="Theoretical geometric model"><br>
-  <em>Figure 3: Measured pump and open-valve system behavior compared with modeled system curves across variable servo-valve restrictions.</em>
+  <em>Figure 9: Measured pump and open-valve system behavior compared with modeled system curves across variable servo-valve restrictions.</em>
 </p>
 
-This work culminated to the final pump and system head curve and operating-point analysis used to evaluate practical operating limits for the modified rig, suggesting the original 12V supply should be limited to 6.8V to reduce the pump output without increasing wear on the servo and extending the data beyond the nonlinear region.
+This work culminated to the final pump and system head curve and operating-point analysis used to evaluate practical operating limits for the modified rig, suggesting the original 12V supply should be limited to 6.8V to reduce the pump output to 4.4L/min without increasing wear on the servo and extending the data beyond the nonlinear region.
 
 <p align="center">
   <img src="docs/pump_output.png" width="600" alt="Experimental final data"><br>
-  <em>Figure 4: Final experiental system vs pump curves and the current (12V) and ideal (6.8V) operating points of the pump.</em>
+  <em>Figure 10: Final experiental system vs pump curves and the current (12V) and ideal (6.8V) operating points of the pump.</em>
 </p>
