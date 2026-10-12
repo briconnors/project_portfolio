@@ -1,5 +1,5 @@
 ## Research II:   PID Digital Controls <kbd>2025</kbd> 
-`Embedded Systems` `Prototyping` `Data Analysis` `Digital Controls` `Experimentation` `C++` `MATLAB` `Python`
+`Embedded Systems` `Controls` `Prototyping` `Data Analysis` `Experimentation` `C++` `MATLAB` `Python`
 
 *Diagnosed the phase lag in a flapping-wing micro air vehicle and redesigned its sensing and control architecture using high-resolution absolute encoders and cascaded position–velocity control.*
 
@@ -9,6 +9,10 @@
   <a href="docs/BIRD_Controller.cpp">Controller Source Code</a>
   &nbsp; | &nbsp;
   <a href="docs/Linkage_Conversion.ipynb">Linkage Conversion Code</a>
+  &nbsp; | &nbsp;
+  <a href="docs/Excel_Files">Excel Data Analysis</a>
+  &nbsp; | &nbsp;
+  <a href="docs/MATLAB_Files">MATLAB Script</a>
 </div>
 
 ___
@@ -82,6 +86,39 @@ ___
 
 ### Outcomes
 
-After tuning both layers of the cascaded PID using the continuous cycling method, I developed a 5 Hz cyclic test in order to provide worst case tracking data. Error between the setpoint and actual position remained primarily between 0 and +/- 2 degrees, with a maximum error of 15 degrees near the rapid pivot. The goal was approximately +/- 10 degrees error due to the relatively high frequency, thus the design largely surpassed requirements. 
+After tuning both layers of the cascaded PID using the continuous cycling method, I developed a 5 Hz cyclic test in order to provide worst case tracking data. 
 
+<br>
+
+<div align="center">
+  <img src="docs/5Hz_bidirectional_test.png" width="48%">
+  <img src="docs/tracking_response_setpoint.png" width="48%">
+  <br>
+  <em>Figure 5: Bi-directional sinosoidal setpoint test and scaled comparison showing tracking distribution.</em>
+</div>
+
+<br>
+
+Error between the setpoint and actual position remained primarily between 0 and +/- 2 degrees, with a maximum error of 15 degrees near the rapid pivot. Notably, the percent difference in position between motors remains between +/- 1 degree, where both fall relatively the same distance behind the setpoint due to processing/response time limitations. Therefore, while the actual setpoint tracking has some lag, the goal in phase difference was approximately +/- 10 degrees error due to the relatively high frequency, thus the design largely surpassed requirements. 
+
+<div align="center">
+  <img src="docs/percent_error.png" width="48%">
+  <img src="docs/percent_difference_motors.png" width="48%">
+  <br>
+  <em>Figure 6: Resulting error distribution from between the setpoint and each motor, and the percent difference in position or phase between motors.</em>
+</div>
+
+<br>
+
+I presented my progress developing the CU-BIRD FWMAV at the 2025 IEEE Undergraduate Research Conference, hosted by Massachusetts Institute of Technology (https://urtc.mit.edu/).
+
+<br>
+
+<div align="center">
+  <img src="docs/IEEE_URTC_MIT.jpg" width="20%">
+  <br>
+  <em>Figure 5: Poster summarizing phase lag correction and controller architecture.</em>
+</div>
+
+---
 Current work has focused on iterating the linkages mounting the magnets over the encoder board to finalize the transmission assembly. Future work may include adding a torque loop once additional friction and cyclic flapping are incorperated to the model, to more directly relate the motor torque to the reaction forces the bird will actually experience in flight beyond a static bench test. 
