@@ -33,8 +33,8 @@ In the machine shop, we used the lathe, milling machine, bandsaw, and manual pre
 </p>
 
 ### Technical Drawings
-- [Rocker Arm](docs/Rocker%20Arm%20Drawing.pdf)
-- [Wheel](docs/Wheel%20Drawing.pdf)
-- [Crank Shaft](docs/Crank%20Shaft%20Drawing.pdf)
-- [Piston Chamber](docs/Piston%20Chamber%20Drawing.pdf)
-- [Piston](docs/Piston%20Drawing.pdf)
+- [Piston Chamber](docs/piston_chamber_drawing.png)
+- [Piston](docs/piston_drawing.png)
+- [Crank Shaft](docs/crank_shaft_drawing.png)
+- [L-Bracket Support](docs/l_bracket_support_drawing.png)
+- [Flywheel](docs/flywheel_drawing.png)
